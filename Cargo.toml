@@ -1,0 +1,22 @@
+[package]
+name = "rocket-template"
+version = "0.1.0"
+authors = ["Lílian Ferreira de Freitas <lily.mosquitoes@gmail.com>"]
+edition = "2021"
+
+[dependencies]
+dotenv = "0.15"
+log = "0.4"
+fern = "0.6"
+anyhow = "1"
+lazy_static = "1"
+rocket = { version = "0.5.0-rc.1", features = ["json"] }
+chrono = { version = "0.4", features = ["serde"] }
+erased-serde = "0.3"
+[dependencies.rocket_sync_db_pools]
+version = "0.1.0-rc.1"
+default-features = false
+features = ["diesel_postgres_pool"]
+[dependencies.diesel]
+version = "1.4"
+features = ["chrono"]

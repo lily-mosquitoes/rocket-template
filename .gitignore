@@ -1,0 +1,9 @@
+# build files
+/target
+
+# environment files
+.env*
+!.env.template
+
+# log files
+*.log
