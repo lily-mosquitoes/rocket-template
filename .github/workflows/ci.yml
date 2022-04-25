@@ -24,6 +24,7 @@ jobs:
             - run: cargo build --verbose
     test:
         name: Cargo test - latest
+        needs: build
         runs-on: ubuntu-latest
         strategy:
             matrix:
@@ -36,6 +37,7 @@ jobs:
             - run: cargo test --verbose
     docker_build:
         name: Docker build - latest
+        needs: test
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v2
