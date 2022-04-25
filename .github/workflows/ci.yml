@@ -1,0 +1,42 @@
+name: Rocket CI
+
+on:
+    push:
+    pull_request:
+
+env:
+    PROJECT_NAME: rocket-template
+    CARGO_TERM_COLOR: always
+
+jobs:
+    build:
+        name: ${{ env.PROJECT_NAME }} - build - latest
+        runs-on: ubuntu-latest
+        strategy:
+            matrix:
+                toolchain:
+                    - stable
+                    - nightly
+        steps:
+            - uses: actions/checkout@v2
+            - run: rustup update ${{ matrix.toolchain }} && rustup default ${{ matrix. toolchain }}
+            - run: carog check --verbose
+            - run: cargo build --verbose
+    test:
+        name: ${{ env.PROJECT_NAME }} - test - latest
+        runs-on: ubuntu-latest
+        strategy:
+            matrix:
+                toolchain:
+                    - stable
+                    - nightly
+        steps:
+            - uses: actions/checkout@v2
+            - run: rustup update ${{ matrix.toolchain }} && rustup default ${{ matrix. toolchain }}
+            - run: cargo test --verbose
+    docker_build:
+        name: ${{ env.PROJECT_NAME }} - Docker build - latest
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v2
+            - run: docker build --build-arg project=${{ env.PROJECT_NAME }} -t ${{ env.PROJECT_NAME }}:latest .
