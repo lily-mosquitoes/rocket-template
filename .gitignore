@@ -4,6 +4,8 @@
 # environment files
 .env*
 !.env.template
+.compose*
+!.compose.template
 
 # log files
 *.log

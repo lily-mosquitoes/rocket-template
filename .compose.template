@@ -1,0 +1,5 @@
+# === docker compose === #
+POSTGRES_USER=user
+POSTGRES_PASSWORD=pwd
+POSTGRES_PORT=5555
+POSTGRES_DB=database

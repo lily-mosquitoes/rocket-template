@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+    rocket:
+        build:
+            context: .
+        image: rocket-template
+        restart: always
+        env_file:
+            - .env
+        ports:
+            - 5556:${PORT}

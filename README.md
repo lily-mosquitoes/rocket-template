@@ -4,23 +4,17 @@ This is a template for a rocket application!
 
 ## How to run
 
-### Locally
+- Set up a [PostgreSQL](https://www.postgresql.org/) database.
+    - If you have [docker-ce](https://docs.docker.com/engine/install/) you can provision a database with the [compose](https://github.com/docker/compose) tool:
+        - Create a `.compose` file with the necessary variables set (see [`.compose.template`](.compose.template)).
+        - Run `docker compose -f docker-postgres.yml up`.
 
-You'll need [rust installed](https://www.rust-lang.org/tools/install), as well as a [PostgreSQL](https://www.postgresql.org/) database setup of your choice.
 
-Create a `.env` file with the necessary variables set (detailed in `.env.template`).
+- Create a `.env` file with the necessary variables set (see [`.env.template`](.env.template)).
 
-Run with `cargo run`. :sparkles:
-
-### With Docker
-
-You'll need the [docker engine](https://docs.docker.com/engine/install/) and [compose](https://github.com/docker/compose).
-
-Create a `.env` file with the necessary variables set (detailed in `.env.template`).
-
-Simply run `docker compose up`. :sparkles:
-
-If you'd still like to run the Rocket application locally but dockerize the postgres instance, you may run the provided file for the database like: `docker compose -f docker-postgres.yml up`. Then run `cargo run`!
+- Install [Rust](https://www.rust-lang.org/tools/install), if you haven't already, then run `cargo run`. :sparkles:
+    - Alternatively, if you have [docker-ce](https://docs.docker.com/engine/install/) you can build and deploy an image with the provided [`Dockerfile`](Dockerfile) using the [compose](https://github.com/docker/compose) tool:
+        - Run `docker compose -f docker-rocket.yml up`.
 
 ## Copyright
 
