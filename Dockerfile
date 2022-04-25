@@ -40,7 +40,7 @@ ARG project
 ENV RUST_PROJECT=${project}
 
 # install postgres client libraries
-RUN USER=root apt-get update && apt-get install postgresql-client -y
+RUN USER=root apt-get update && apt-get install postgresql-client-13 -y
 
 # copy binary from build container
 COPY --from=build /${RUST_PROJECT}/target/release/${RUST_PROJECT} .
