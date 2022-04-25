@@ -2,6 +2,8 @@
 
 This is a template for a rocket application!
 
+[![license](https://img.shields.io/github/license/lily-mosquitoes/rocket-template?color=ff69b4)](LICENSE) [![build-status](https://img.shields.io/github/workflow/status/lily-mosquitoes/rocket-template/Rocket%20CI/main?logo=GitHub&label=build)](https://github.com/lily-mosquitoes/rocket-template/actions/workflows/ci.yml)
+
 ## How to run
 
 - Set up a [PostgreSQL](https://www.postgresql.org/) database.
