@@ -12,7 +12,7 @@ This is a template for a rocket application!
 
 - Create a `.env` file with the necessary variables set (see [`.env.template`](.env.template)).
 
-- Install [Rust](https://www.rust-lang.org/tools/install), if you haven't already, then run `cargo run`. :sparkles:
+- Install `libpq-dev` and [Rust](https://www.rust-lang.org/tools/install), if you haven't already, then run `cargo run`. :sparkles:
     - Alternatively, if you have [docker-ce](https://docs.docker.com/engine/install/) you can build and deploy an image with the provided [`Dockerfile`](Dockerfile) using the [compose](https://github.com/docker/compose) tool:
         - Run `docker compose -f docker-rocket.yml up`.
 
