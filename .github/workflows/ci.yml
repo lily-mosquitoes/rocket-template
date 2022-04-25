@@ -10,7 +10,7 @@ env:
 
 jobs:
     build:
-        name: ${{ env.PROJECT_NAME }} - build - latest
+        name: Cargo build - latest
         runs-on: ubuntu-latest
         strategy:
             matrix:
@@ -23,7 +23,7 @@ jobs:
             - run: carog check --verbose
             - run: cargo build --verbose
     test:
-        name: ${{ env.PROJECT_NAME }} - test - latest
+        name: Cargo test - latest
         runs-on: ubuntu-latest
         strategy:
             matrix:
@@ -35,7 +35,7 @@ jobs:
             - run: rustup update ${{ matrix.toolchain }} && rustup default ${{ matrix. toolchain }}
             - run: cargo test --verbose
     docker_build:
-        name: ${{ env.PROJECT_NAME }} - Docker build - latest
+        name: Docker build - latest
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v2
